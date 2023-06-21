@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class CardTest {
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
     static void setUpAll() {
