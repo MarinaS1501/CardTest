@@ -16,11 +16,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class CardTest {
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
         //System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
         if (SystemUtils.IS_OS_MAC)
             System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
