@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,6 +20,7 @@ public class CardTest {
 
     @BeforeAll
     static void setUpAll() {
+        WebDriverManager.chromedriver().setup();
         //System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
         if (SystemUtils.IS_OS_MAC)
             System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
