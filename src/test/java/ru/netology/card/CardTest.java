@@ -1,5 +1,6 @@
 package ru.netology.card;
 
+import org.apache.commons.lang3.SystemUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +19,10 @@ public class CardTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
+        //System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
+        if (SystemUtils.IS_OS_MAC)
+            System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
+        else System.setProperty("web-driver.chrome.driver", "river/linux/chromedriver");
     }
 
     @BeforeEach
