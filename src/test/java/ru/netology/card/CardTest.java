@@ -22,7 +22,7 @@ public class CardTest {
         //System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
         if (SystemUtils.IS_OS_MAC)
             System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
-        else System.setProperty("web-driver.chrome.driver", "river/linux/chromedriver");
+        else System.setProperty("web-driver.chrome.driver", "driver/linux/chromedriver");
     }
 
     @BeforeEach
