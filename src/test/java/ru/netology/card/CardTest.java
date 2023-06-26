@@ -1,30 +1,18 @@
 package ru.netology.card;
 
 import org.apache.commons.lang3.SystemUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class CardTest {
     private WebDriver driver;
-
-    @BeforeAll
-    static void setUpAll() {
-        //System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
-        if (SystemUtils.IS_OS_MAC)
-            System.setProperty("web-driver.chrome.driver", "driver/mac/chromedriver");
-        else System.setProperty("web-driver.chrome.driver", "driver/linux/chromedriver");
-    }
 
     @BeforeEach
     void setUp() {
@@ -49,8 +37,8 @@ public class CardTest {
         driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79004442233");
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.cssSelector("[type=\"button\"]")).click();
-        String text = driver.findElement(By.cssSelector("[data-test-id]")).getText();
-        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        String text = driver.findElement(By.cssSelector("[data-test-id=\"order-success\"]")).getText();
+        Assertions.assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
 
     }
 }
